@@ -19,7 +19,7 @@ class Index extends Component
         return view(
             'livewire.post.index',
             [
-                'posts' => Post::orderBy('updated_at', 'desc')->paginate($this->perPage)
+                'posts' => Post::with('image')->orderBy('updated_at', 'desc')->paginate($this->perPage)
             ]
         );
     }
